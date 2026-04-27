@@ -14,10 +14,19 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    const output =
-      data.run?.output ||
-      data.compile?.output ||
-      "No Output / Error";
+    console.log(data); // debug (Vercel logs me help karega)
+
+    let output = "";
+
+    if (data.run && data.run.output) {
+      output = data.run.output;
+    } else if (data.compile && data.compile.output) {
+      output = data.compile.output;
+    } else if (data.message) {
+      output = data.message;
+    } else {
+      output = "❌ No output (check code or API response)";
+    }
 
     res.status(200).json({ output });
 
