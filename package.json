@@ -1,7 +1,6 @@
 {
   "name": "nnh-c-compiler",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,6 +10,13 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "@monaco-editor/react": "latest"
+    "@monaco-editor/react": "latest",
+    "axios": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest"
   }
 }
